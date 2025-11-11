@@ -1,0 +1,12 @@
+@base_url = http://localhost:8080
+
+
+### Create a contact
+POST {{base_url}}/api/contacts
+Content-Type: application/json
+
+{
+  "first_name": "John",
+  "last_name": "Doe",
+  "email":  "john@codersgyan.com"
+}
