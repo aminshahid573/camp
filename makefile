@@ -3,4 +3,4 @@ run: build
 
 
 build:
-	@go build -o ./bin/camp
+	@go build -o ./bin/camp cmd/camp/main.go
