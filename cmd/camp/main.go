@@ -17,7 +17,7 @@ func main() {
 
 	// run the migration
 	if err := database.RunMigration(db); err != nil {
-		log.Fatal("failed to run migration: %w", err)
+		log.Fatal(err)
 	}
 
 	contactRepository := contact.NewRepository(db)
@@ -25,5 +25,5 @@ func main() {
 
 	http.HandleFunc("POST /api/contacts", contactHandler.Create)
 
-	http.ListenAndServe(":8080", nil)
+	log.Fatal(http.ListenAndServe(":8080", nil))
 }
